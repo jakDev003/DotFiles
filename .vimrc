@@ -120,6 +120,10 @@ Plug 'TroyFletcher/vim-colors-synthwave/'
 " ---- OneHalf Theme ----
 Plug 'sonph/onehalf'
 
+" ---- fzf (Fuzzy Finder) ----
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 " Initialize plugin system
 call plug#end()
 
