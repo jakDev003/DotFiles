@@ -1,3 +1,12 @@
+" ---- Automatically monitor for changes to .vimrc so VIM does not need to reload
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+set encoding=UTF=-8
+set autoindent " New lines inherit the indentation of previous lines
+set smarttab
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -5,6 +14,7 @@ set smartindent
 set exrc " allow for external vimrc files
 set guicursor= " keep cursor as a block instead of a line
 set relativenumber
+set incsearch
 set nohlsearch " no highlight search
 set hidden " keeps all buffers open
 set noerrorbells " fail silently (no rang-a-danglin)
@@ -12,14 +22,20 @@ set nu
 set nowrap
 set ignorecase " ignore case when searching (needed for smartcase)
 set smartcase " when searching and a capital letter is used it will become case sensitive
+set linebreak
+set title " Set the window's title, reflecting the file currently being edited
 
-" how to keep file change history
+" ---- Code folding
+set foldmethod=indent " Fold based on indentation levels
+set foldnestmax=3 " Fold up to three nested levels
+
+" ---- how to keep file change history
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
 
-" searching
+" ---- searching
 set incsearch " highlight as you type when searching
 set termguicolors
 set scrolloff=8 " when scrolling it will start scrolling when 'x' lines away
@@ -27,21 +43,21 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set showmatch
 
-" displaying messages
+" ---- displaying messages
 set signcolumn=yes
 set colorcolumn=80
 
-" give more space for displaying messages
+" ---- give more space for displaying messages
 set cmdheight=2
 
-" Having longer updatetime (default is 4000ms = 4s) leads to noticable
-" delays and poor user experience
+" ---- Having longer updatetime (default is 4000ms = 4s) leads to noticable
+"      delays and poor user experience
 set updatetime=300
 
-" System settings
+" ---- System settings
 set clipboard=unnamedplus   " using system clipboard filetype plugin on
 
-" open new split panes to right and below
+" ---- open new split panes to right and below
 set splitright
 set splitbelow
 
@@ -63,25 +79,42 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'godlygeek/tabular'
 call plug#end()
 
-" To install plugins run this:
+" ---- To install plugins run this:
 " :PlugInstall
 "
-" To update plugins run this:
+" ---- To update plugins run this:
 " :PlugUpdate
 
-" Coc Installation Canditates
+" ---- Coc Installation Candidates
 " To install Coc packages run this:
 " :CocInstall coc-html coc-css coc-eslint coc-json
 
-" OneHalf Theme
+" ---- OneHalf Theme
 syntax on
 set t_Co=256
 set cursorline
 colorscheme onehalfdark
 
-" Telescope
+" ---- Syntastic Specific settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" ---- Telescope
 let mapleader = " " " Sets the 'leader' key to 'SPACE'
 nnoremap <leader>ps <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -89,28 +122,16 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-" NerdTree
+" ---- NerdTree
 nnoremap <leader>nf :NERDTreeFocus<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nff :NERDTreeFind<CR>
 
-" Generic navigation mappings
-" move split panes to left/bottom/top/right
-nnoremap <leader>sh <C-W>H
-nnoremap <leader>sj <C-W>J
-nnoremap <leader>sk <C-W>K
-nnoremap <leader>sl <C-W>L
-" move between panes to left/bottom/top/right
-nnoremap <leader>mh <C-w>h
-nnoremap <leader>mj <C-w>j
-nnoremap <leader>mk <C-w>k
-nnoremap <leader>ml <C-w>l
-
-" Coc
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
+" ---- Coc
+"  Use tab for trigger completion with characters ahead and navigate.
+"  NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+"  other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
