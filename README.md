@@ -18,9 +18,9 @@ In linux the .config directory is located here:
 
 
 # Shortcuts
--	Ctrl + W + 
+-	Ctrl + W + <
     *	Move to left window
--	Ctrl + W + 
+-	Ctrl + W + >
     *	Move to right window
 -	Ctrl + W + v
     *	Vertically split window
