@@ -48,4 +48,13 @@ In linux the .config directory is located here:
     *	Cut 3 lines where cursor is
 -	p
     *	Paste
+-   :s/foo/bar/
+    *   Find first occurance of 'foo' and replace with 'bar'
+-   :s/foo/bar/g
+    *   Find ALL occurances of 'foo' ON THE CURRENT LINE and replace with 'bar'
+-   :%s/foo/bar/g
+    *   Find ALL occurances of 'foo' IN THE CURRENT FILE and replace with 'bar'
+    
+
+
 
