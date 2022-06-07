@@ -1,0 +1,8 @@
+
+{
+    "languageserver": {},
+    "git.enableGutter": true,
+    "http.proxyStrictSSL": false,
+    "https.rejectUnauthorized": false,
+    "tsserver.npm": "/usr/bin/npm"
+}
