@@ -4,7 +4,7 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-" set encoding=UTF=-8 " For VIM Only
+set encoding=UTF=-8
 set autoindent " New lines inherit the indentation of previous lines
 set smarttab
 set tabstop=4 softtabstop=4
