@@ -20,6 +20,16 @@
 - :bd
   - Close current buffer without closing the window
 
+### Buffers [\<leader\> = 'Space']
+- \<leader\>l
+  - Switch to next buffer
+- \<leader\>p
+  - Switch to previous buffer
+- \<leader\>q
+  - Close current buffer
+
+
+
 ### Search [\<leader\> = 'Space']
 - <leader>ff
   - Open Fuzzy Finder (fzf)

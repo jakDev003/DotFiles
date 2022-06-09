@@ -24,6 +24,7 @@ set ignorecase " ignore case when searching (needed for smartcase)
 set smartcase " when searching and a capital letter is used it will become case sensitive
 set linebreak
 set title " Set the window's title, reflecting the file currently being edited
+set mouse=a
 
 " ---- Code folding
 " set foldmethod=indent " Fold based on indentation levels
@@ -87,6 +88,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'godlygeek/tabular'
+Plug 'akinsho/nvim-bufferline.lua'
 call plug#end()
 
 " ---- To install plugins run this:
@@ -99,11 +101,39 @@ call plug#end()
 " To install Coc packages run this:
 " :CocInstall coc-html coc-css coc-eslint coc-json
 
+
+let mapleader = " " " Sets the 'leader' key to 'SPACE'
+
 " ---- OneHalf Theme
 syntax on
 set t_Co=256
 set cursorline
 colorscheme onehalfdark
+
+" ---- Tabs
+:lua << EOF
+  require'bufferline'.setup{
+    -- override some options from their defaults
+    options = {
+        tab_size = 10,
+        show_buffer_close_icons = false,
+    }
+  }
+EOF
+
+" MAPPINGS
+" NOTE: a is alt, s is shift
+" These commands will cycle through your buffer tabs and honor the custom ordering if you change the order of buffers.
+" The vim commands :bnext and :bprevious will not respect the custom ordering.
+nnoremap <silent><leader>l :BufferLineCycleNext<CR>
+nnoremap <silent><leader>h :BufferLineCyclePrev<CR>
+
+" These commands will move the current buffer tab backwards or forwards in the list of buffer tabs.
+nnoremap <silent><leader>ml :BufferLineMoveNext<CR>
+nnoremap <silent><leader>mh :BufferLineMovePrev<CR>
+
+" kill buffer tab
+nnoremap <silent> <leader>q :silent! up! <bar> silent! bd! <bar> call BufferLineCycleNext() <cr>
 
 " ---- Syntastic Specific settings
 set statusline+=%#warningmsg#
@@ -116,7 +146,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " ---- Telescope
-let mapleader = " " " Sets the 'leader' key to 'SPACE'
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr> " Lists files in your current working directory
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr> " Search for a string in your current working directory and get results live as you type
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr> " Lists open buffers in current neovim instance
@@ -139,7 +168,7 @@ augroup DIRCHANGE
 augroup END
 
 " ---- Prettier
-nnoremap <leader>p :Prettier<CR>
+nnoremap <leader>pf :Prettier<CR> " Run Prettier
 
 " ---- Coc
 "  Use tab for trigger completion with characters ahead and navigate.
