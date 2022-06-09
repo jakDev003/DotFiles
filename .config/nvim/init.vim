@@ -26,8 +26,8 @@ set linebreak
 set title " Set the window's title, reflecting the file currently being edited
 
 " ---- Code folding
-set foldmethod=indent " Fold based on indentation levels
-set foldnestmax=3 " Fold up to three nested levels
+" set foldmethod=indent " Fold based on indentation levels
+" set foldnestmax=3 " Fold up to three nested levels
 
 " ---- how to keep file change history
 set noswapfile
@@ -65,6 +65,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'BurntSushi/ripgrep'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sharkdp/fd'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -116,17 +117,29 @@ let g:syntastic_check_on_wq = 0
 
 " ---- Telescope
 let mapleader = " " " Sets the 'leader' key to 'SPACE'
-nnoremap <leader>ps <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr> " Lists files in your current working directory
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr> " Search for a string in your current working directory and get results live as you type
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr> " Lists open buffers in current neovim instance
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> " Lists available help tags and opens a new window with the relevant help info
 
 " ---- NerdTree
-nnoremap <leader>nf :NERDTreeFocus<CR>
-nnoremap <leader>n :NERDTree<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>nff :NERDTreeFind<CR>
+nnoremap <leader>nf :NERDTreeFocus<CR> " Move cursor to the NerdTree buffer
+nnoremap <leader>n :NERDTree<CR> " Open NerdTree
+nnoremap <leader>nt :NERDTreeToggle<CR> " Toggle NerdTree Open / Closed
+nnoremap <leader>nff :NERDTreeFind<CR> " Find the current file in the tree. If no tree exists for the current tab, or the file is not under the current root, then initialize a new tree where the root is the directory of the current file.
+
+" Reload NerdTree when there is a change in the file structure
+autocmd BufEnter NERD_tree_* | execute 'normal R'
+au CursorHold * if exists("t:NerdTreeBufName") | call <SNR>15_refreshRoot() | endif
+
+" Autorefresh for a change in the current directory
+augroup DIRCHANGE
+    au!
+    autocmd DirChanged global :NERDTreeCWD
+augroup END
+
+" ---- Prettier
+nnoremap <leader>p :Prettier<CR>
 
 " ---- Coc
 "  Use tab for trigger completion with characters ahead and navigate.
