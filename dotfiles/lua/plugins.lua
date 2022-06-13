@@ -29,6 +29,10 @@ return require("packer").startup({
     use({ "wbthomason/packer.nvim" })
     use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
     use({ "kyazdani42/nvim-web-devicons" })
+
+    -- Dashboard
+    use ({ "goolord/alpha-nvim", config = get_setup("alpha-nvim") })
+
     if packer_bootstrap then
       require("packer").sync()
     end
