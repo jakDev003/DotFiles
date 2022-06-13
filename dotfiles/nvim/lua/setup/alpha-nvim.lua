@@ -16,7 +16,7 @@ dashboard.section.header.val = {
 -- Set menu
 dashboard.section.buttons.val = {
   dashboard.button("n", "n 📝  > New file", ":ene <BAR> startinsert <CR>"),
-  dashboard.button("e", "e 🔎  > File Explorer", ":e .<CR>"),
+  dashboard.button("e", "e 🔎  > File Explorer", ":Telescope<CR>"),
   --dashboard.button("f", "f 🔎  > Find file", ":exec \":vimgrep \".input(\"grep what? where?\") *<CR>"),
   dashboard.button("p", "p ✅  > PackerSync", ":PackerSync<CR>"),
   dashboard.button("s", "s ⚙️  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),

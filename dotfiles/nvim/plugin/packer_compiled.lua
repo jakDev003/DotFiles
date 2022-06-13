@@ -75,6 +75,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["auto-session"] = {
+    config = { 'require("setup/autoSession")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   ["nightfox.nvim"] = {
     config = { 'require("setup/nightfox")' },
     loaded = true,
@@ -96,6 +102,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
@@ -106,22 +117,51 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
   ["prettier.nvim"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  ["session-lens"] = {
+    config = { 'require("setup/sessionLens")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\session-lens",
+    url = "https://github.com/rmagatti/session-lens"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-require("setup/alpha-nvim")
-time([[Config for alpha-nvim]], false)
 -- Config for: nightfox.nvim
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
 time([[Config for nightfox.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+require("setup/alpha-nvim")
+time([[Config for alpha-nvim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+require("setup/autoSession")
+time([[Config for auto-session]], false)
+-- Config for: session-lens
+time([[Config for session-lens]], true)
+require("setup/sessionLens")
+time([[Config for session-lens]], false)
 if should_profile then save_profiles(1) end
 
 end)

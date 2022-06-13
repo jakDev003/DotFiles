@@ -1,29 +1,44 @@
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
+local function register_mappings(mappings, default_options)
+  for mode, mode_mappings in pairs(mappings) do
+    for _, mapping in pairs(mode_mappings) do
+      local options = #mapping == 3 and table.remove(mapping) or default_options
+      local prefix, cmd = unpack(mapping)
+      pcall(vim.keymap.set, mode, prefix, cmd, options)
+    end
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Map leader to space
 vim.g.mapleader = " "
 
--- Open file explorer
-map("n", "<Leader>f", ":E<CR>", { silent = true }) -- Open File Explorer
+local mappings = {
+  i = {},
+  n = {
+    -- Normal mode
+    -- Better window movement
+    { "<C-h>", "<C-w>h" },
+    -- Open file explorer
+    { "<Leader>f", ":Telescope" }, -- Open File Explorer
+    { "<Leader>ff", ":Telescope find_files" }, -- Open File Explorer
 
--- Window mappings
-map("n", "<Leader>k", ":vsp<CR>", { silent = true }) -- vertical split
-map("n", "<Leader>l", ":sp<CR>", { silent = true }) -- horizontal split
+    -- Window mappings
+    { "<Leader>k", ":vsp<CR>" }, -- vertical split
+    { "<Leader>l", ":sp<CR>" }, -- horizontal split
 
-map("n", "<Leader>+", ":res +2<CR>", { silent = true }) -- increase window size by 2
-map("n", "<Leader>-", ":res -2<CR>", { silent = true }) -- decrease window size by 2
-map("n", "<Leader>v+", ":vert res +2<CR>", { silent = true }) -- increase vertical window size by 2
-map("n", "<Leader>v-", ":vert res -2<CR>", { silent = true }) -- decrease vertical window size by 2
+    { "<Leader>+", ":res +2<CR>" }, -- increase window size by 2
+    { "<Leader>-", ":res -2<CR>" }, -- decrease window size by 2
+    { "<Leader>v+", ":vert res +2<CR>" }, -- increase vertical window size by 2
+    { "<Leader>v-", ":vert res -2<CR>" }, -- decrease vertical window size by 2
 
-map("n", "<Leader><Down>", "<C-W><C-J><CR>", { silent = true }) -- move to bottom buffer
-map("n", "<Leader><Up>", "<C-W><C-K><CR>", { silent = true }) -- move to top buffer
-map("n", "<Leader><Right>", "<C-W><C-L><CR>", { silent = true }) -- move to right buffer
-map("n", "<Leader><Left>", "<C-W><C-H><CR>", { silent = true }) -- move to left buffer
+    { "<Leader><Down>", "<C-W><C-J><CR>" }, -- move to bottom buffer
+    { "<Leader><Up>", "<C-W><C-K><CR>" }, -- move to top buffer
+    { "<Leader><Right>", "<C-W><C-L><CR>" }, -- move to right buffer
+    { "<Leader><Left>", "<C-W><C-H><CR>" }, -- move to left buffer
 
-map("n", "<Leader>qb", ":bd<CR>", { silent = true }) -- Close current buffer without closing window
+    { "<Leader>qb", ":bd<CR>" }, -- Close current buffer without closing window
+  },
+  x = {},
+}
+
+register_mappings(mappings, { silent = true, noremap = true })
+

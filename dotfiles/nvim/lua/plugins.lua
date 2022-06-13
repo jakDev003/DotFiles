@@ -27,7 +27,11 @@ return require("packer").startup({
   function(use)
     -- Packer can manage itself
     use({ "wbthomason/packer.nvim" })
+
+    -- Theme
     use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+
+    -- Icons
     use({ "kyazdani42/nvim-web-devicons" })
 
     -- Dashboard
@@ -42,6 +46,31 @@ return require("packer").startup({
     -- Prettier
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+
+    -- Sessions ** (Needed for Telescope)
+    use({
+      "rmagatti/auto-session",
+      config = get_setup("autoSession")
+    })
+
+    -- Telescope
+    use({
+      "nvim-telescope/telescope.nvim",
+      requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+    })
+
+    -- Session Lens ** (Needed for Telescope)
+    use({ 
+      "rmagatti/session-lens",
+      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+      config = get_setup("sessionLens")
+    })
+
+    -- Treesitter
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
 
     if packer_bootstrap then
       require("packer").sync()
