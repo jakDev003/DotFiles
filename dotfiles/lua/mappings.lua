@@ -7,140 +7,23 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Map leader to space
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
--- Nvim Tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
-map("n", "<leader>u", ":NvimTreeFindFile<CR>", { silent = true })
+-- Open file explorer
+map("n", "<Leader>f", ":E<CR>", { silent = true }) -- Open File Explorer
 
--- Switch Session
--- map("n", "<Leader>1", ":Telescope sessions [save_current=true]<CR>")
-map("n", "<Leader>1", ":SearchSession<CR>")
+-- Window mappings
+map("n", "<Leader>k", ":vsp<CR>", { silent = true }) -- vertical split
+map("n", "<Leader>l", ":sp<CR>", { silent = true }) -- horizontal split
 
--- Update Plugins
-map("n", "<Leader>u", ":PackerSync<CR>")
+map("n", "<Leader>+", ":res +2<CR>", { silent = true }) -- increase window size by 2
+map("n", "<Leader>-", ":res -2<CR>", { silent = true }) -- decrease window size by 2
+map("n", "<Leader>v+", ":vert res +2<CR>", { silent = true }) -- increase vertical window size by 2
+map("n", "<Leader>v-", ":vert res -2<CR>", { silent = true }) -- decrease vertical window size by 2
 
--- Open nvimrc file
-map("n", "<Leader>v", "<cmd>e $MYVIMRC<CR>")
+map("n", "<Leader><Down>", "<C-W><C-J><CR>", { silent = true }) -- move to bottom buffer
+map("n", "<Leader><Up>", "<C-W><C-K><CR>", { silent = true }) -- move to top buffer
+map("n", "<Leader><Right>", "<C-W><C-L><CR>", { silent = true }) -- move to right buffer
+map("n", "<Leader><Left>", "<C-W><C-H><CR>", { silent = true }) -- move to left buffer
 
--- Source nvimrc file
-map("n", "<Leader>sv", ":luafile %<CR>")
-
--- Quick new file
-map("n", "<Leader>n", "<cmd>enew<CR>")
-
--- Easy select all of file
-map("n", "<Leader>sa", "ggVG<c-$>")
-
--- Make visual yanks place the cursor back where started
-map("v", "y", "ygv<Esc>")
-
--- Easier file save
-map("n", "<Leader>w", "<cmd>:w<CR>")
-map("n", "<Delete>", "<cmd>:w<CR>")
-
--- Tab to switch buffers in Normal mode
-map("n", "<Tab>", ":bnext<CR>")
-map("n", "<S-Tab>", ":bprevious<CR>")
-
--- More molecular undo of text
--- map("i", ",", ",<c-g>u")
-map("i", ".", ".<c-g>u")
-map("i", "!", "!<c-g>u")
-map("i", "?", "?<c-g>u")
-map("i", ";", ";<c-g>u")
-map("i", ":", ":<c-g>u")
-
--- Keep search results centred
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
-map("n", "J", "mzJ`z")
-
--- Make Y yank to end of the line
-map("n", "Y", "y$")
-
--- Line bubbling
-map("n", "<c-j>", "<cmd>m .+1<CR>==", { silent = true })
-map("n", "<c-k>", "<cmd>m .-2<CR>==", { silent = true })
-map("v", "<c-j>", ":m '>+1<CR>==gv=gv", { silent = true })
-map("v", "<c-k>", ":m '<-2<CR>==gv=gv", { silent = true })
-
---After searching, pressing escape stops the highlight
-map("n", "<esc>", ":noh<cr><esc>", { silent = true })
-
--- Easy add date/time
-map("n", "<Leader>t", "\"=strftime('%c')<CR>Pa", { silent = true })
-
--- Telescope
-
-local km = vim.keymap
--- Add moves of more than 5 to the jump list
-km.set("n", "j", [[(v:count > 5 ? "m'" . v:count : "") . 'j']], { expr = true, desc = "if j > 5 then add to jumplist" })
-km.set("n", "<leader>p", function()
-  require("telescope.builtin").find_files()
-end)
-km.set("n", "<leader>r", function()
-  require("telescope.builtin").registers()
-end)
-km.set("n", "<leader>g", function()
-  require("telescope.builtin").live_grep()
-end)
-km.set("n", "<leader>b", function()
-  require("telescope.builtin").buffers()
-end)
-km.set("n", "<leader>j", function()
-  require("telescope.builtin").help_tags()
-end)
-km.set("n", "<leader>h", function()
-  require("telescope.builtin").git_bcommits()
-end)
-km.set("n", "<leader>f", function()
-  require("telescope").extensions.file_browser.file_browser()
-end)
-km.set("n", "<leader>s", function()
-  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
-end)
-km.set("n", "<leader>i", function()
-  require("telescope.builtin").git_status()
-end)
-km.set("n", "<leader>ca", function()
-  vim.lsp.buf.code_action()
-end)
-km.set("n", "<leader>cs", function()
-  require("telescope.builtin").lsp_document_symbols()
-end)
-km.set("n", "<leader>cd", function()
-  require("telescope.builtin").diagnostics()
-end)
-km.set("n", "<leader>cr", function()
-  require("telescope.builtin").lsp_references()
-end)
-km.set({ "v", "n" }, "<leader>cn", function()
-  vim.lsp.buf.rename()
-end, { noremap = true, silent = true })
-km.set("n", "<leader>ci", function()
-  vim.diagnostic.open_float()
-end)
-
--- Easier split mappings
-map("n", "<Leader><Down>", "<C-W><C-J>", { silent = true })
-map("n", "<Leader><Up>", "<C-W><C-K>", { silent = true })
-map("n", "<Leader><Right>", "<C-W><C-L>", { silent = true })
-map("n", "<Leader><Left>", "<C-W><C-H>", { silent = true })
-map("n", "<Leader>;", "<C-W>R", { silent = true })
-map("n", "<Leader>[", "<C-W>_", { silent = true })
-map("n", "<Leader>]", "<C-W>|", { silent = true })
-map("n", "<Leader>=", "<C-W>=", { silent = true })
-
--- Pounce
-km.set({ "n", "v" }, "h", ":Pounce<CR>", { silent = true })
-km.set("n", "H", ":PounceRepeat<CR>", { silent = true })
-
--- Symbols outline
-map("n", "<leader>o", ":SymbolsOutline<cr>")
-
--- ZenMode toggle
-map("n", "<leader>z", ":ZenMode<cr>")
-
--- Make Option and backspace delete whole words in OSX/Kitty. Requires `macos_option_as_alt yes` to be set in Kitty config
-map("i", "<A-BS>", "<C-W>")
+map("n", "<Leader>qb", ":bd<CR>", { silent = true }) -- Close current buffer without closing window
