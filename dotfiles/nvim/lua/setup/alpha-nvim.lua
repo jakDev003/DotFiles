@@ -15,10 +15,12 @@ dashboard.section.header.val = {
 
 -- Set menu
 dashboard.section.buttons.val = {
-  dashboard.button("e", "e   > New file", ":ene <BAR> startinsert <CR>"),
-  dashboard.button("f", "f   > Find file", ":E .<CR>"),
-  dashboard.button("s", "s   > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-  dashboard.button("q", "q   > Quit NVIM", ":qa<CR>"),
+  dashboard.button("n", "n 📝  > New file", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("e", "e 🔎  > File Explorer", ":e .<CR>"),
+  --dashboard.button("f", "f 🔎  > Find file", ":exec \":vimgrep \".input(\"grep what? where?\") *<CR>"),
+  dashboard.button("p", "p ✅  > PackerSync", ":PackerSync<CR>"),
+  dashboard.button("s", "s ⚙️  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+  dashboard.button("q", "q 🛑  > Quit NVIM", ":qa<CR>"),
 }
 
 -- Send config to alpha

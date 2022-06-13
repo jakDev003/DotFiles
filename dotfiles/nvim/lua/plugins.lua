@@ -33,6 +33,16 @@ return require("packer").startup({
     -- Dashboard
     use ({ "goolord/alpha-nvim", config = get_setup("alpha-nvim") })
 
+    -- LSP
+    use {
+      "williamboman/nvim-lsp-installer",
+      "neovim/nvim-lspconfig",
+    }
+
+    -- Prettier
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
     if packer_bootstrap then
       require("packer").sync()
     end

@@ -57,5 +57,27 @@ Note: \<Leader\> = "Space"
 
 ### Formatting
 
-- \<Leader\>p
+- \<Leader\>pf
   - Run Prettier
+
+### LSP
+- gD
+  - Go to declaration
+- gd
+  - Go to definition
+- K
+  - Hover Description
+- gi
+  - Go to implementation
+- \<Ctrl\> + k
+  - Signature help
+- \<Leader\>d
+  - Type Definition
+- \<Leader\>rn
+  - Rename
+- \<Leader\>ca
+  - Code Action
+- gr
+  - Go to references
+- \<Leader\>fmt
+  - Format

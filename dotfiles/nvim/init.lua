@@ -3,6 +3,9 @@ require("options")
 require("mappings")
 require("setup.customStatusLine")
 
+-- set up language servers
+require("setup.languageServer")
+
 -- To specify a different config for a particular Operating System I can do this:
 -- if (vim.loop.os_uname().sysname == "Linux") then
 --     require('linuxconfig')
