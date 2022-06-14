@@ -3,8 +3,10 @@
 ## Installation Location
 
 To install copy everything from the 'dotfiles' directory into the appropriate directory for your OS.
+
 Linux:
 ~/.config/nvim/
+
 Windows:
 ~\AppData\Local\nvim
 
