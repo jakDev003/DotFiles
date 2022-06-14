@@ -15,11 +15,12 @@ local mappings = {
   i = {},
   n = {
     -- Normal mode
-    -- Better window movement
-    { "<C-h>", "<C-w>h" },
-    -- Open file explorer
-    { "<Leader>f", ":Telescope" }, -- Open File Explorer
-    { "<Leader>ff", ":Telescope find_files" }, -- Open File Explorer
+    -- Find files using Telescope command-line sugar.
+    { "<Leader>f", "<cmd>Telescope<cr>" },
+    { "<Leader>ff", "<cmd>Telescope find_files<cr>" },
+    { "<Leader>fg", "<cmd>Telescope live_grep<cr>" },
+    { "<Leader>fb", "<cmd>Telescope buffers<cr>" },
+    { "<Leader>fh", "<cmd>Telescope help_tags<cr>" },
 
     -- Window mappings
     { "<Leader>k", ":vsp<CR>" }, -- vertical split
