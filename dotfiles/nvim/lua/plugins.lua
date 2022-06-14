@@ -47,34 +47,6 @@ return require("packer").startup({
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
 
-    -- Sessions ** (Needed for Telescope)
-    use({
-      "rmagatti/auto-session",
-      config = get_setup("autoSession")
-    })
-
-    -- Telescope
-    use({
-      "nvim-telescope/telescope.nvim",
-      requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
-    })
-
-    -- Session Lens ** (Needed for Telescope)
-    use({ 
-      "rmagatti/session-lens",
-      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
-      config = get_setup("sessionLens")
-    })
-
-    -- Treesitter Plugins
-    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
-
-    -- Treesitter
-    use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
-
     if packer_bootstrap then
       require("packer").sync()
     end

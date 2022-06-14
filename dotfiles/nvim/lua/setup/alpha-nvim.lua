@@ -17,7 +17,6 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
   dashboard.button("n", "n 📝  > New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("f", "f 📂  > File Explorer", ":e .<CR>"),
-  dashboard.button("t", "t 🔭  > Telescope", "<cmd>Telescope<CR>"),
   dashboard.button("c", "c ✨  > Change Theme", "<cmd>Telescope colorscheme<CR>"),
   dashboard.button("e", "e 🔎  > Find Files", "<cmd>Telescope find_files<CR>"),
   dashboard.button("p", "p ✅  > PackerSync", ":PackerSync<CR>"),
