@@ -23,7 +23,7 @@ local mappings = {
     { "<Leader>fh", "<cmd>Telescope help_tags<cr>" },
 
     -- Window mappings
-    { "<Leader>k", ":vsp<CR>" }, -- vertical split
+    { "<Leader>j", ":vsp<CR>" }, -- vertical split
     { "<Leader>l", ":sp<CR>" }, -- horizontal split
 
     { "<Leader>+", ":res +2<CR>" }, -- increase window size by 2
