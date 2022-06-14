@@ -66,6 +66,9 @@ return require("packer").startup({
       config = get_setup("sessionLens")
     })
 
+    -- Treesitter Plugins
+    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
+
     -- Treesitter
     use {
       'nvim-treesitter/nvim-treesitter',

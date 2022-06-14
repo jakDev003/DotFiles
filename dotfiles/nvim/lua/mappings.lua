@@ -23,8 +23,8 @@ local mappings = {
     { "<Leader>fh", "<cmd>Telescope help_tags<cr>" },
 
     -- Window mappings
-    { "<Leader>j", ":vsp<CR>" }, -- vertical split
-    { "<Leader>l", ":sp<CR>" }, -- horizontal split
+    { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
+    { "<Leader>sp", ":sp<CR>" }, -- vertical split
 
     { "<Leader>+", ":res +2<CR>" }, -- increase window size by 2
     { "<Leader>-", ":res -2<CR>" }, -- decrease window size by 2
@@ -37,6 +37,7 @@ local mappings = {
     { "<Leader><Left>", "<C-W><C-H><CR>" }, -- move to left buffer
 
     { "<Leader>qb", ":bd<CR>" }, -- Close current buffer without closing window
+    { "<Leader>ds", ":DeleteSession<CR>" }, -- Delete Session
   },
   x = {},
 }

@@ -12,9 +12,9 @@ Windows:
 Note: \<Leader\> = "Space"
 
 ### Windows
-- \<Leader\>k  OR  :vsp
+- \<Leader\>vsp  OR  :vsp
   - Vertically split window
-- \<Leader\>l  OR  :sp
+- \<Leader\>sp  OR  :sp
   - Horizontally split window
 - \<Leader\>-  OR  :res +2
   - Decrease height of current window by 2

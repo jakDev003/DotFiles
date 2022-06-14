@@ -107,6 +107,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
@@ -150,6 +160,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
 time([[Config for nightfox.nvim]], false)
+-- Config for: session-lens
+time([[Config for session-lens]], true)
+require("setup/sessionLens")
+time([[Config for session-lens]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require("setup/alpha-nvim")
@@ -158,10 +172,6 @@ time([[Config for alpha-nvim]], false)
 time([[Config for auto-session]], true)
 require("setup/autoSession")
 time([[Config for auto-session]], false)
--- Config for: session-lens
-time([[Config for session-lens]], true)
-require("setup/sessionLens")
-time([[Config for session-lens]], false)
 if should_profile then save_profiles(1) end
 
 end)
