@@ -1,4 +1,4 @@
-# VimSettings
+# DotFiles
 
 ## Installation Location
 To install copy everything from the 'dotfiles' directory into the appropriate directory for your OS.
@@ -35,8 +35,6 @@ Note: \<Leader\> = "Space"
 - \<Leader\>\<Left\>  OR  Ctrl + W Ctrl + H
   - Move to left buffer in current window
 
-
-
 ### General
 - u
   - Undo
@@ -54,6 +52,8 @@ Note: \<Leader\> = "Space"
   - Quit all files (unless there are unsaved changes)
 - :qa!
   - Quit all files and discard any unsaved changes
+- \<Leader\>ds
+  - Delete Session
 
 ### Formatting
 
