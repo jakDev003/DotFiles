@@ -50,7 +50,3 @@ prettier.setup({
   use_tabs = false,
   vue_indent_script_and_style = false,
 })
-
--- Mappings.
-local bufopts = { noremap=true, silent=true }
-vim.keymap.set('n', '<Leader>pf', ':Prettier', bufopts)

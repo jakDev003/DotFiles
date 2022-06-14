@@ -11,18 +11,12 @@ end
 -- Map leader to space
 vim.g.mapleader = " "
 
-local mappings = {
+local silentMappings = {
   i = {},
   n = {
     -- Normal mode
     -- Find files using Telescope command-line sugar.
     { "<Leader>ex", ":e .<CR>" },
-    -- { "<Leader>f", "<cmd>lua require('telescope.builtin')<CR>" },
-    -- { "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>" },
-    -- { "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>" },
-    -- { "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>" },
-    -- { "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>" },
-    -- { "<Leader>ffb", "<cmd>lua require('telescope.builtin').file_browsers()<CR>" },
 
     -- Window mappings
     { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
@@ -44,5 +38,12 @@ local mappings = {
   x = {},
 }
 
-register_mappings(mappings, { silent = true, noremap = true })
 
+
+local loudMappings = {
+  n = {
+    { "<Leader>fmtp", ":Prettier<CR>" }, -- Format With Prettier
+  },
+}
+register_mappings(silentMappings, { silent = true, noremap = true })
+register_mappings(loudMappings, { noremap = true })
