@@ -16,11 +16,13 @@ local mappings = {
   n = {
     -- Normal mode
     -- Find files using Telescope command-line sugar.
-    { "<Leader>f", "<cmd>Telescope<cr>" },
-    { "<Leader>ff", "<cmd>Telescope find_files<cr>" },
-    { "<Leader>fg", "<cmd>Telescope live_grep<cr>" },
-    { "<Leader>fb", "<cmd>Telescope buffers<cr>" },
-    { "<Leader>fh", "<cmd>Telescope help_tags<cr>" },
+    { "<Leader>ex", ":e .<CR>" },
+    { "<Leader>f", "<cmd>lua require('telescope.builtin')<CR>" },
+    { "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>" },
+    { "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>" },
+    { "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>" },
+    { "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>" },
+    { "<Leader>ffb", "<cmd>lua require('telescope.builtin').file_browsers()<CR>" },
 
     -- Window mappings
     { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
@@ -36,8 +38,8 @@ local mappings = {
     { "<Leader><Right>", "<C-W><C-L><CR>" }, -- move to right buffer
     { "<Leader><Left>", "<C-W><C-H><CR>" }, -- move to left buffer
 
-    { "<Leader>qb", ":bd<CR>" }, -- Close current buffer without closing window
-    { "<Leader>ds", ":DeleteSession<CR>" }, -- Delete Session
+    { "<Leader>bq", ":bd<CR>" }, -- Close current buffer without closing window
+    { "<Leader>sq", ":DeleteSession<CR>" }, -- Delete Session
   },
   x = {},
 }
