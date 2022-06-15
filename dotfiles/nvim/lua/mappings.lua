@@ -11,12 +11,15 @@ end
 -- Map leader to space
 vim.g.mapleader = " "
 
-local silentMappings = {
+local mappings = {
   i = {},
   n = {
     -- Normal mode
-    -- Find files using Telescope command-line sugar.
+    -- Find files using NetRw.
     { "<Leader>ex", ":e .<CR>" },
+
+    -- Prettier
+    { "<Leader>fp", ":Prettier<CR>" },
 
     -- Window mappings
     { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
@@ -33,17 +36,9 @@ local silentMappings = {
     { "<Leader><Left>", "<C-W><C-H><CR>" }, -- move to left buffer
 
     { "<Leader>bq", ":bd<CR>" }, -- Close current buffer without closing window
-    { "<Leader>sq", ":DeleteSession<CR>" }, -- Delete Session
   },
   x = {},
 }
 
+register_mappings(mappings, { silent = true, noremap = true })
 
-
-local loudMappings = {
-  n = {
-    { "<Leader>fmtp", ":Prettier<CR>" }, -- Format With Prettier
-  },
-}
-register_mappings(silentMappings, { silent = true, noremap = true })
-register_mappings(loudMappings, { noremap = true })

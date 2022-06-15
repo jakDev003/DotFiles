@@ -41,21 +41,20 @@ return require("packer").startup({
     use {
       "williamboman/nvim-lsp-installer",
       "neovim/nvim-lspconfig",
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip'
     }
 
     -- Prettier
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
 
-    -- nvim cmp
-    use({
-        'neovim/nvim-lspconfig',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
+    -- Treesitter Plugins
+    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
 
-    })
+    -- Treesitter
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
 
     if packer_bootstrap then
       require("packer").sync()
