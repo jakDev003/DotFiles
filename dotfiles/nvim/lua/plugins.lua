@@ -44,8 +44,11 @@ return require("packer").startup({
     }
 
     -- Prettier
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+    use({
+      'nvim-lua/plenary.nvim',
+      'jose-elias-alvarez/null-ls.nvim',
+      'MunifTanjim/prettier.nvim'
+    })
 
     -- Treesitter Plugins
     use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
