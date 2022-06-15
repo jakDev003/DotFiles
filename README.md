@@ -62,30 +62,39 @@ Note: \<Leader\> = "Space"
 - \<Leader\>ex OR :e .
   - Open Vim File Explorer
 
-### Formatting
-
-- \<Leader\>fp OR :Prettier
-  - Format using Prettier
-- \<Leader\>fmt
-  - Format using LSP
-
 ### LSP
 
+- \<Leader\>e
+  - Open Diagnostic window
+- [d
+  - Diagnostic Window Go to Prev
+- ]d
+  - Diagnostic Window Go to Prev
+- \<Leader\>q
+  - Diagnostic Window Set Loc List
 - gD
-  - Go to declaration
+  - Go to Declaration
 - gd
-  - Go to definition
+  - Go to Definition
 - K
-  - Hover Description
+  - Hover
 - gi
-  - Go to implementation
-- \<Ctrl k\>
-  - Signature help
-- \<Leader\>d
-  - Type Definition
+  - Go to Implementation
+- \<C-k\>
+  - Signature Help
+- \<Leader\>wa
+  - Add workspace folder
+- \<Leader\>wr
+  - Remove workspace folder
+- \<Leader\>wl
+  - List Workspaces
+- \<Leader\>D
+  - Go to Type Definition
 - \<Leader\>rn
   - Rename
 - \<Leader\>ca
   - Code Action
 - gr
-  - Go to references
+  - Go to References
+- \<Leader\>fmt
+  - Format using LSP
