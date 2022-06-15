@@ -61,6 +61,18 @@ Note: \<Leader\> = "Space"
   - Delete Session
 - \<Leader\>ex OR :e .
   - Open Vim File Explorer
+- 54G
+  - Go to line '54' in file
+
+#### Find and replace
+
+- :%s/\<search_term\>/\<replace_term\>/g
+  - Open Vim File Explorer
+
+#### Multiline editing
+
+- :\<line_from\>,\<line_to\>s/^/\<search_term\>/\<replace_term\>/
+  - Change lines 1-4 from "" to "//" == ":1,4s/\\/\\///"
 
 ### LSP
 
@@ -98,3 +110,19 @@ Note: \<Leader\> = "Space"
   - Go to References
 - \<Leader\>fmt
   - Format using LSP
+
+### NerdTree
+
+- \<Leader\>nF
+  - NerdTree Focus
+- \<Leader\>nt
+  - NerdTree Toggle
+- \<Leader\>nf
+  - NerdTree Find
+
+### Prettier
+
+- \<Leader\>fmtP OR :Prettier
+  - Format using Prettier
+- \<Leader\>wf OR :Prettier w
+  - Format using Prettier and save

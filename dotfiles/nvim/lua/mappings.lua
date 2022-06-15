@@ -19,7 +19,8 @@ local mappings = {
     { "<Leader>ex", ":e .<CR>" },
 
     -- Prettier
-    { "<Leader>fp", ":Prettier<CR>" },
+    { "<Leader>fmtP", ":Prettier<CR>" },
+    { "<Leader>wf", ":Prettier w<CR>" },
 
     -- Window mappings
     { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
@@ -36,6 +37,11 @@ local mappings = {
     { "<Leader><Left>", "<C-W><C-H><CR>" }, -- move to left buffer
 
     { "<Leader>bq", ":bd<CR>" }, -- Close current buffer without closing window
+
+    -- NerdTree
+    { "<Leader>nF", ":NERDTreeFocus<CR>" },
+    { "<Leader>nt", ":NERDTreeToggle<CR>" },
+    { "<Leader>nf", ":NERDTreeFind<CR>" },
   },
   x = {},
 }

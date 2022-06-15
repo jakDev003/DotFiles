@@ -50,6 +50,14 @@ return require("packer").startup({
       'MunifTanjim/prettier.nvim'
     })
 
+    -- NerdTree
+    use({
+      'preservim/nerdtree',
+      'Xuyuanp/nerdtree-git-plugin',
+      'ryanoasis/vim-devicons',
+      'tiagofumo/vim-nerdtree-syntax-highlight',
+    })
+
     -- Treesitter Plugins
     use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
 
