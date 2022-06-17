@@ -50,4 +50,12 @@ prettier.setup({
   use_tabs = false,
   vue_indent_script_and_style = false,
   autoformat = true
+
+   ["null-ls"] = {
+    runtime_condition = function(params)
+      -- return false to skip running prettier
+      return true
+    end,
+    timeout = 5000,
+  }
 })

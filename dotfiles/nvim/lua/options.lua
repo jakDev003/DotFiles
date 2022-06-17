@@ -28,7 +28,7 @@ opt.listchars = { tab = " ", trail = "·" }
 opt.relativenumber = true
 opt.scrolloff = 4 -- Lines of context
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 4 -- Size of an indent
+opt.shiftwidth = 2 -- Size of an indent
 opt.showmode = false -- Don't display mode
 opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes:1" -- always show signcolumns
@@ -45,7 +45,7 @@ g.did_load_filetypes = 0
 -- Give me some fenced codeblock goodness
 g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "scss", "lua", "vim" }
 --o.whichwrap = vim.o.whichwrap .. "<,>" -- Wrap movement between lines in edit mode with arrows
-wrap = true
+wrap = false
 -- opt.cc = "80"
 opt.mouse = "a"
 opt.guicursor =

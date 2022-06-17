@@ -122,7 +122,9 @@ Note: \<Leader\> = "Space"
 
 ### Prettier
 
-- \<Leader\>fmtP OR :Prettier
+- \<Leader\>gp OR :Prettier
+  - Format using Prettier
+- \<Leader\>f OR :Prettier
   - Format using Prettier
 - \<Leader\>wf OR :Prettier w
   - Format using Prettier and save

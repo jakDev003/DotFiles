@@ -12,15 +12,16 @@ end
 vim.g.mapleader = " "
 
 local mappings = {
-  i = {},
   n = {
     -- Normal mode
     -- Find files using NetRw.
     { "<Leader>ex", ":e .<CR>" },
 
     -- Prettier
-    { "<Leader>fmtP", ":Prettier<CR>" },
-    { "<Leader>wf", ":Prettier w<CR>" },
+    { "<Leader>gp", ":Prettier<CR>" }, -- Get Pretty
+    { "<Leader>wf", ":Prettier :w<CR>" }, -- Get Pretty and save
+    -- these are handled in the prettier.lua
+    -- "<Leader>f" == Format using Prettier
 
     -- Window mappings
     { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
@@ -43,7 +44,14 @@ local mappings = {
     { "<Leader>nt", ":NERDTreeToggle<CR>" },
     { "<Leader>nf", ":NERDTreeFind<CR>" },
   },
-  x = {},
+  x = {
+    -- Visual mode
+    -- Prettier
+    { "<Leader>gp", ":Prettier<CR>" }, -- Get Pretty
+    { "<Leader>wf", ":Prettier<CR> wa<CR>" }, -- Get Pretty and save
+    -- these are handled in the prettier.lua
+    -- "<Leader>f" == Format using Prettier
+  },
 }
 
 register_mappings(mappings, { silent = true, noremap = true })
