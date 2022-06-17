@@ -106,6 +106,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-ripgrep"] = {
+    config = { 'require("setup/alpha-nvim")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ripgrep",
+    url = "https://github.com/rinx/nvim-ripgrep"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
@@ -158,6 +164,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
 time([[Config for nightfox.nvim]], false)
+-- Config for: nvim-ripgrep
+time([[Config for nvim-ripgrep]], true)
+require("setup/alpha-nvim")
+time([[Config for nvim-ripgrep]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require("setup/alpha-nvim")

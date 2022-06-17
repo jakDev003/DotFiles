@@ -43,6 +43,9 @@ local mappings = {
     { "<Leader>nF", ":NERDTreeFocus<CR>" },
     { "<Leader>nt", ":NERDTreeToggle<CR>" },
     { "<Leader>nf", ":NERDTreeFind<CR>" },
+
+    -- RipGrep
+    { "<Leader>rg", ":lua require'nvim-ripgrep'.grep()<CR>" },
   },
   x = {
     -- Visual mode

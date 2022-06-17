@@ -128,3 +128,8 @@ Note: \<Leader\> = "Space"
   - Format using Prettier
 - \<Leader\>wf OR :Prettier w
   - Format using Prettier and save
+
+### RipGrep
+
+- \<Leader\>rg
+  - Find search by string

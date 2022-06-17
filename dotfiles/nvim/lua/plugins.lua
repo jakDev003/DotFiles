@@ -67,6 +67,11 @@ return require("packer").startup({
       run = ':TSUpdate'
   }
 
+  use ({
+      "rinx/nvim-ripgrep",
+      config = get_setup("alpha-nvim")
+  })
+
     if packer_bootstrap then
       require("packer").sync()
     end
