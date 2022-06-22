@@ -50,16 +50,20 @@ return require("packer").startup({
       'MunifTanjim/prettier.nvim'
     })
 
-    -- NerdTree
-    use({
-      'preservim/nerdtree',
-      'Xuyuanp/nerdtree-git-plugin',
-      'ryanoasis/vim-devicons',
-      'tiagofumo/vim-nerdtree-syntax-highlight',
-    })
+    -- Nvim-Tree
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      config = get_setup("nvim-tree")
+    }
+
+    -- Indent Blankline (Auto indenter)
+    use ({ 'lukas-reineke/indent-blankline.nvim', config=get_setup("indent-blankline") })
 
     -- Treesitter Plugins
-    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow'})
+    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow', 'lewis6991/spellsitter.nvim'})
 
     -- Treesitter
     use {

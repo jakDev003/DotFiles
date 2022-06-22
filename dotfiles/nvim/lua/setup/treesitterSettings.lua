@@ -1,3 +1,10 @@
+-- Treesitter plugin
+require('spellsitter').setup {
+	-- Whether enabled, can be a list of filetypes, e.g. {'python', 'lua'}
+	enable = true,
+	debug = false
+  }
+
 require("nvim-treesitter.configs").setup({
 	context_commentstring = {
 		enable = true,
@@ -8,7 +15,7 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "html" }, -- FIX: disabled for now https://github.com/nvim-treesitter/nvim-treesitter/issues/1788
-		additional_vim_regex_highlighting = true,
+		--additional_vim_regex_highlighting = true,
 	},indent = {
 		enable = true,
 	},

@@ -111,14 +111,16 @@ Note: \<Leader\> = "Space"
 - \<Leader\>fmt
   - Format using LSP
 
-### NerdTree
+### NvimTree
 
 - \<Leader\>nF
-  - NerdTree Focus
+  - NvimTree Focus
 - \<Leader\>nt
-  - NerdTree Toggle
+  - NvimTree Toggle
 - \<Leader\>nf
-  - NerdTree Find
+  - NvimTree Find
+- \<C-x\>
+  - Open the file in a horizontal split
 
 ### Prettier
 

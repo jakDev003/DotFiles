@@ -85,20 +85,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["indent-blankline.nvim"] = {
+    config = { 'require("setup/indent-blankline")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
-  },
-  nerdtree = {
-    loaded = true,
-    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
-    url = "https://github.com/preservim/nerdtree"
-  },
-  ["nerdtree-git-plugin"] = {
-    loaded = true,
-    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree-git-plugin",
-    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
   ["nightfox.nvim"] = {
     config = { 'require("setup/nightfox")' },
@@ -131,6 +127,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ripgrep",
     url = "https://github.com/rinx/nvim-ripgrep"
+  },
+  ["nvim-tree.lua"] = {
+    config = { 'require("setup/nvim-tree")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -167,23 +169,14 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
-  ["vim-devicons"] = {
+  ["spellsitter.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-nerdtree-syntax-highlight"] = {
-    loaded = true,
-    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nerdtree-syntax-highlight",
-    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\spellsitter.nvim",
+    url = "https://github.com/lewis6991/spellsitter.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nightfox.nvim
-time([[Config for nightfox.nvim]], true)
-require("setup/nightfox")
-time([[Config for nightfox.nvim]], false)
 -- Config for: nvim-ripgrep
 time([[Config for nvim-ripgrep]], true)
 require("setup/alpha-nvim")
@@ -192,6 +185,18 @@ time([[Config for nvim-ripgrep]], false)
 time([[Config for alpha-nvim]], true)
 require("setup/alpha-nvim")
 time([[Config for alpha-nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("setup/indent-blankline")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("setup/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nightfox.nvim
+time([[Config for nightfox.nvim]], true)
+require("setup/nightfox")
+time([[Config for nightfox.nvim]], false)
 if should_profile then save_profiles(1) end
 
 end)

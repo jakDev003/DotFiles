@@ -39,10 +39,10 @@ local mappings = {
 
     { "<Leader>bq", ":bd<CR>" }, -- Close current buffer without closing window
 
-    -- NerdTree
-    { "<Leader>nF", ":NERDTreeFocus<CR>" },
-    { "<Leader>nt", ":NERDTreeToggle<CR>" },
-    { "<Leader>nf", ":NERDTreeFind<CR>" },
+    -- Nvim Tree
+    { "<Leader>nF", ":NvimTreeFocus<CR>" },
+    { "<Leader>nt", ":NvimTreeToggle<CR>" },
+    { "<Leader>nf", ":NvimTreeFindFile<CR>" },
 
     -- RipGrep
     { "<Leader>rg", ":lua require'nvim-ripgrep'.grep()<CR>" },
