@@ -12,6 +12,12 @@ end
 vim.g.mapleader = " "
 
 local mappings = {
+  i = {
+    -- Insert mode
+
+    -- autocomplete on tab
+    { "<Tab>", <expr> <TAB> pumvisible() ? "<C-y>" },
+  },
   n = {
     -- Normal mode
     -- Find files using NetRw.

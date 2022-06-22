@@ -64,6 +64,15 @@ Note: \<Leader\> = "Space"
 - 54G
   - Go to line '54' in file
 
+#### Search for text in file
+
+The basic steps to perform a search in Vim are as follows:
+
+Press "/."
+Type the search pattern.
+Press "Enter" to perform the search.
+Press "n" to find the next occurrence or "N" to find the previous occurrence.
+
 #### Find and replace
 
 - :%s/\<search_term\>/\<replace_term\>/g
