@@ -65,12 +65,21 @@ return require("packer").startup({
     use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
-  }
+    }
 
-  use ({
-      "rinx/nvim-ripgrep",
-      config = get_setup("alpha-nvim")
-  })
+    -- RipGrep
+    use ({
+        "rinx/nvim-ripgrep",
+        config = get_setup("alpha-nvim")
+    })
+
+    -- Autocomplete (Requires LSP to be setup)
+    use ({
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/nvim-cmp',
+      'onsails/lspkind.nvim'
+    })
 
     if packer_bootstrap then
       require("packer").sync()

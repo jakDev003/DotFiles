@@ -133,3 +133,14 @@ Note: \<Leader\> = "Space"
 
 - \<Leader\>rg
   - Find search by string
+
+### Autocomplete
+
+- \<C-d\>
+  - Scroll down
+- \<C-f\>
+  - Scroll up
+- \<C-e\>
+  - Close
+- \<C-y\>
+  - Confirm
