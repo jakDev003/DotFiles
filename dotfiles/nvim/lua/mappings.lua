@@ -16,7 +16,7 @@ local mappings = {
     -- Insert mode
 
     -- autocomplete on tab
-    { "<Tab>", <expr> <TAB> pumvisible() ? "<C-y>" },
+    { "<Tab>", "<C-y>" },
   },
   n = {
     -- Normal mode
