@@ -173,14 +173,33 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
+  },
+  ultisnips = {
+    config = { 'require("setup/utilisnips")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-snippets\\.",
+    url = "https://github.com/honza/vim-snippets"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-ripgrep
-time([[Config for nvim-ripgrep]], true)
-require("setup/alpha-nvim")
-time([[Config for nvim-ripgrep]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-snippets\\."
+time([[Runtimepath customization]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require("setup/utilisnips")
+time([[Config for ultisnips]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("setup/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require("setup/alpha-nvim")
@@ -189,14 +208,14 @@ time([[Config for alpha-nvim]], false)
 time([[Config for indent-blankline.nvim]], true)
 require("setup/indent-blankline")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("setup/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: nightfox.nvim
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
 time([[Config for nightfox.nvim]], false)
+-- Config for: nvim-ripgrep
+time([[Config for nvim-ripgrep]], true)
+require("setup/alpha-nvim")
+time([[Config for nvim-ripgrep]], false)
 if should_profile then save_profiles(1) end
 
 end)

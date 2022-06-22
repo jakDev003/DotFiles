@@ -77,6 +77,12 @@ return require("packer").startup({
         config = get_setup("alpha-nvim")
     })
 
+    -- Snippet Engine (For autocomplete)
+    use {'SirVer/ultisnips',
+    requires = {{'honza/vim-snippets', rtp = '.'}},
+    config = get_setup('utilisnips')
+}
+
     -- Autocomplete (Requires LSP to be setup)
     use ({
       'hrsh7th/cmp-nvim-lsp',
