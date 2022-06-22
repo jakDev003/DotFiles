@@ -14,9 +14,6 @@ vim.g.mapleader = " "
 local mappings = {
   i = {
     -- Insert mode
-
-    -- autocomplete on tab
-    { "<Tab>", "<C-y>" },
   },
   n = {
     -- Normal mode
