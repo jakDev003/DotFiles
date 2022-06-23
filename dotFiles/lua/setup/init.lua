@@ -1,0 +1,5 @@
+require("setup.customStatusLine")
+require("setup.alpha-nvim")
+--require("setup.languageServer")
+--require("setup.treesitterSettings")
+--require("setup.cmp")
