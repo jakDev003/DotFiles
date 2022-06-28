@@ -1,0 +1,147 @@
+" Vim with all enhancements
+source $VIMRUNTIME/vimrc_example.vim
+
+" Use the internal diff if available.
+" Otherwise use the special 'diffexpr' for Windows.
+if &diffopt !~# 'internal'
+  set diffexpr=MyDiff()
+endif
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg1 = substitute(arg1, '!', '\!', 'g')
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg2 = substitute(arg2, '!', '\!', 'g')
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let arg3 = substitute(arg3, '!', '\!', 'g')
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+ if empty(&shellxquote)
+   let l:shxq_sav = ''
+   set shellxquote&
+ endif
+ let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+ let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  let cmd = substitute(cmd, '!', '\!', 'g')
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+" ------- Do not touch anything above this ---------
+
+" ---- Automatically monitor for changes to .vimrc so VIM does not need to reload
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so
+  $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+"set encoding=UTF=-8
+set autoindent " New lines inherit the indentation of previous lines
+set smarttab
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set exrc " allow for external vimrc files
+set guicursor= " keep cursor as a block instead of a line
+set relativenumber
+set incsearch
+set nohlsearch " no highlight search
+set hidden " keeps all buffers open
+set noerrorbells " fail silently (no rang-a-danglin)
+set nu
+set nowrap
+set ignorecase " ignore case when searching (needed for smartcase)
+set smartcase " when searching and a capital letter is used it will become case sensitive
+set linebreak
+set title " Set the window's title, reflecting the file currently being edited
+
+" ---- Code folding
+"set foldmethod=indent " Fold based on indentation levels
+"set foldnestmax=3 " Fold up to three nested levels
+
+" ---- how to keep file change history
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+" ---- searching
+set incsearch " highlight as you type when searching
+set termguicolors
+set scrolloff=8 " when scrolling it will start scrolling when 'x' lines away
+set noshowmode
+set completeopt=menuone,noinsert,noselect
+set showmatch
+
+" ---- displaying messages
+set signcolumn=yes
+set colorcolumn=80
+
+" ---- give more space for displaying messages
+set cmdheight=2
+
+" ---- Having longer updatetime (default is 4000ms = 4s) leads to noticable
+" delays and poor user experience
+set updatetime=300
+
+" ---- System settings
+set clipboard=unnamedplus   " using system clipboard filetype plugin on
+
+" ---- open new split panes to right and below
+set splitright
+set splitbelow
+"
+call plug#begin('~/.vim/plugged')
+Plug 'BurntSushi/ripgrep'
+Plug 'sharkdp/fd'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdcommenter'
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'godlygeek/tabular'
+call plug#end()
+
+" ---- To install plugins run this:
+" :PlugInstall
+
+" ---- To update plugins run this:
+" :PlugUpdate
+
+" ---- OneHalf Theme
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+
+let mapleader = " "
+
+" --- General
+nnoremap <leader><Left> :bnext<CR> " Change buffer
+nnoremap <leader><Right> :bprev<CR> " Change buffer
+
+" ---- NerdTree
+nnoremap <leader>nf :NERDTreeFocus<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nff :NERDTreeFind<CR>
