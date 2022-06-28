@@ -37,18 +37,18 @@ return require("packer").startup({
     -- Dashboard
     use ({ "goolord/alpha-nvim", config = get_setup("alpha-nvim") })
 
-    ---- LSP
-    --use {
-    --  "williamboman/nvim-lsp-installer",
-    --  "neovim/nvim-lspconfig",
-    --}
+    -- LSP
+    use {
+     "williamboman/nvim-lsp-installer",
+     "neovim/nvim-lspconfig",
+    }
 
-    ---- Prettier
-    --use({
-    --  'nvim-lua/plenary.nvim',
-    --  'jose-elias-alvarez/null-ls.nvim',
-    --  'MunifTanjim/prettier.nvim'
-    --})
+    -- Prettier
+    use({
+     'nvim-lua/plenary.nvim',
+     'jose-elias-alvarez/null-ls.nvim',
+     'MunifTanjim/prettier.nvim'
+    })
 
     -- Nvim-Tree
     use {
@@ -62,14 +62,14 @@ return require("packer").startup({
     -- Indent Blankline (Auto indenter)
     use ({ 'lukas-reineke/indent-blankline.nvim', config=get_setup("indent-blankline") })
 
-    ---- Treesitter Plugins
-    --use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow', 'lewis6991/spellsitter.nvim'})
+    -- Treesitter Plugins
+    use ({'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow', 'lewis6991/spellsitter.nvim'})
 
-    ---- Treesitter
-    --use {
-    --  'nvim-treesitter/nvim-treesitter',
-    --  run = ':TSUpdate'
-    --}
+    -- Treesitter
+    use {
+     'nvim-treesitter/nvim-treesitter',
+     run = ':TSUpdate'
+    }
 
     -- RipGrep
     use ({
@@ -77,19 +77,19 @@ return require("packer").startup({
         config = get_setup("alpha-nvim")
     })
 
-    ---- Snippet Engine (For autocomplete)
-    --use {'SirVer/ultisnips',
-    --  requires = {{'honza/vim-snippets', rtp = '.'}},
-    --  config = get_setup('utilisnips')
-    --}
+    -- Snippet Engine (For autocomplete)
+    use {'SirVer/ultisnips',
+     requires = {{'honza/vim-snippets', rtp = '.'}},
+     config = get_setup('utilisnips')
+    }
 
-    ---- Autocomplete (Requires LSP to be setup)
-    --use ({
-    --  'hrsh7th/cmp-nvim-lsp',
-    --  'hrsh7th/cmp-buffer',
-    --  'hrsh7th/nvim-cmp',
-    --  'onsails/lspkind.nvim'
-    --})
+    -- Autocomplete (Requires LSP to be setup)
+    use ({
+     'hrsh7th/cmp-nvim-lsp',
+     'hrsh7th/cmp-buffer',
+     'hrsh7th/nvim-cmp',
+     'onsails/lspkind.nvim'
+    })
 
     -- Nvim Comment
     use({'terrortylor/nvim-comment', config = get_setup('nvim-comment')})
