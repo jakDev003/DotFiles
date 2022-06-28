@@ -91,6 +91,15 @@ return require("packer").startup({
       'onsails/lspkind.nvim'
     })
 
+    -- Nvim Comment
+    use({'terrortylor/nvim-comment', config = get_setup('nvim-comment')})
+
+    -- Fugitive
+    use({'tpope/vim-fugitive'})
+
+    -- Syntastic
+    use({'vim-syntastic/syntastic'})
+
     if packer_bootstrap then
       require("packer").sync()
     end

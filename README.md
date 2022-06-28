@@ -155,3 +155,17 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
   - Close
 - \<C-y\>
   - Confirm
+
+### Nvim-Comment
+
+- \<Leader\>c OR :CommentToggle
+  - Comment / Uncomment current line
+- :67,69CommentToggle
+  - Comment / Uncomment a range
+- :'<,'>CommentToggle
+  - Comment / Uncomment in visual selection
+
+### Git
+
+- git pull --tags origin develop
+  - Pull from 'develop' branch to get merge conflicts

@@ -112,6 +112,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-comment"] = {
+    config = { 'require("setup/nvim-comment")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
@@ -174,11 +180,21 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
   },
+  syntastic = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\syntastic",
+    url = "https://github.com/vim-syntastic/syntastic"
+  },
   ultisnips = {
     config = { 'require("setup/utilisnips")' },
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ultisnips",
     url = "https://github.com/SirVer/ultisnips"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-snippets"] = {
     loaded = true,
@@ -192,22 +208,22 @@ time([[Defining packer_plugins]], false)
 time([[Runtimepath customization]], true)
 vim.o.runtimepath = vim.o.runtimepath .. ",C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-snippets\\."
 time([[Runtimepath customization]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-require("setup/utilisnips")
-time([[Config for ultisnips]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("setup/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require("setup/alpha-nvim")
 time([[Config for alpha-nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require("setup/indent-blankline")
-time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("setup/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require("setup/utilisnips")
+time([[Config for ultisnips]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require("setup/nvim-comment")
+time([[Config for nvim-comment]], false)
 -- Config for: nightfox.nvim
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
@@ -216,6 +232,10 @@ time([[Config for nightfox.nvim]], false)
 time([[Config for nvim-ripgrep]], true)
 require("setup/alpha-nvim")
 time([[Config for nvim-ripgrep]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("setup/indent-blankline")
+time([[Config for indent-blankline.nvim]], false)
 if should_profile then save_profiles(1) end
 
 end)

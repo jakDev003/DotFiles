@@ -11,6 +11,16 @@ vim.api.nvim_command("set statusline+=%#DiffChange#") -- Set status bar color
 vim.api.nvim_command("set statusline+=\\ %c:%l/%L") -- Shows cursor column : cursor line / total line count
 vim.api.nvim_command("set statusline+=\\ [%n]") -- Shows buffer number
 
+vim.api.nvim_command("set statusline+=%#warningmsg#")
+vim.api.nvim_command("set statusline+=%{SyntasticStatuslineFlag()}")
+vim.api.nvim_command("set statusline+=%*")
+
+-- Syntastic specific settings for statusline
+vim.api.nvim_command("let g:syntastic_always_populate_loc_list = 1")
+vim.api.nvim_command("let g:syntastic_auto_loc_list = 1")
+vim.api.nvim_command("let g:syntastic_check_on_open = 1")
+vim.api.nvim_command("let g:syntastic_check_on_wq = 0")
+
 -- -- WinBar
 -- vim.api.nvim_command("set winbar=")
 -- vim.api.nvim_command("set winbar+=%=") -- Right Align
