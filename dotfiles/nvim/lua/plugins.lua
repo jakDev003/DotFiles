@@ -39,15 +39,15 @@ return require("packer").startup({
 
     -- LSP
     use {
-     "williamboman/nvim-lsp-installer",
-     "neovim/nvim-lspconfig",
+      "williamboman/nvim-lsp-installer",
+      "neovim/nvim-lspconfig",
     }
 
     -- Prettier
     use({
-     'nvim-lua/plenary.nvim',
-     'jose-elias-alvarez/null-ls.nvim',
-     'MunifTanjim/prettier.nvim'
+      'nvim-lua/plenary.nvim',
+      'jose-elias-alvarez/null-ls.nvim',
+      'MunifTanjim/prettier.nvim'
     })
 
     -- Nvim-Tree
@@ -67,8 +67,8 @@ return require("packer").startup({
 
     -- Treesitter
     use {
-     'nvim-treesitter/nvim-treesitter',
-     run = ':TSUpdate'
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
     }
 
     -- RipGrep
@@ -79,26 +79,17 @@ return require("packer").startup({
 
     -- Snippet Engine (For autocomplete)
     use {'SirVer/ultisnips',
-     requires = {{'honza/vim-snippets', rtp = '.'}},
-     config = get_setup('utilisnips')
-    }
+    requires = {{'honza/vim-snippets', rtp = '.'}},
+    config = get_setup('utilisnips')
+}
 
     -- Autocomplete (Requires LSP to be setup)
     use ({
-     'hrsh7th/cmp-nvim-lsp',
-     'hrsh7th/cmp-buffer',
-     'hrsh7th/nvim-cmp',
-     'onsails/lspkind.nvim'
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/nvim-cmp',
+      'onsails/lspkind.nvim'
     })
-
-    -- Nvim Comment
-    use({'terrortylor/nvim-comment', config = get_setup('nvim-comment')})
-
-    -- Fugitive
-    use({'tpope/vim-fugitive'})
-
-    -- Syntastic
-    use({'vim-syntastic/syntastic'})
 
     if packer_bootstrap then
       require("packer").sync()

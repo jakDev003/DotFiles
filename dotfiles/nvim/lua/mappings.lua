@@ -49,10 +49,6 @@ local mappings = {
 
     -- RipGrep
     { "<Leader>rg", ":lua require'nvim-ripgrep'.grep()<CR>" },
-
-    -- Nvim-Comment
-    { "<Leader>c", ":CommentToggle<CR>" },
-
   },
   x = {
     -- Visual mode
