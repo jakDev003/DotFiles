@@ -1,16 +1,39 @@
-# DotFiles
+# Description
 
-## Installation Location
+These are my dotfiles for various applications.
 
-To install copy everything from the 'dotfiles' directory into the appropriate directory for your OS.
+- Vim
+  - These are barebones configs, with just enough to make it look pretty. :-)
+- NeoVim
+  - These are fully featured configs, making this basically an IDE with autocomplete, error checking, advanced file searching and more!
+
+# Installation
+
+## Vim
+
+### Installation Location
+
+To install copy everything from the 'dotfiles/vim' directory into the appropriate directory for your OS.
 
 Linux:
-~/.config/nvim/
+"~/etc/vim/vimrc.local"
 
 Windows:
-~\AppData\Local\nvim
+"C:\Program Files\Vim_vimrc"
 
-#### Required external packages
+## Neovim
+
+### Installation Location
+
+To install copy everything from the 'dotfiles/nvim' directory into the appropriate directory for your OS.
+
+Linux:
+"~/.config/nvim/"
+
+Windows:
+"~\AppData\Local\nvim"
+
+### Required external packages
 
 - install language servers:
   - npm install -g vscode-languageserver
@@ -20,11 +43,11 @@ Windows:
 - install ripgrep:
   - Follow latest instructions here: https://github.com/BurntSushi/ripgrep
 
-## Shortcuts
+# Shortcuts
 
 Note: \<Leader\> = "Space"
 
-### General
+## General
 
 - u
   - Undo
@@ -49,7 +72,7 @@ Note: \<Leader\> = "Space"
 - 54G
   - Go to line '54' in file
 
-#### Search for text in file
+### Search for text in file
 
 The basic steps to perform a search in Vim are as follows:
 
@@ -58,17 +81,17 @@ Type the search pattern.
 Press "Enter" to perform the search.
 Press "n" to find the next occurrence or "N" to find the previous occurrence.
 
-#### Find and replace
+### Find and replace
 
 - :%s/\<search_term\>/\<replace_term\>/g
   - Open Vim File Explorer
 
-#### Multiline editing
+### Multiline editing
 
 - :\<line_from\>,\<line_to\>s/^/\<search_term\>/\<replace_term\>/
   - Change lines 1-4 from "" to "//" == ":1,4s/\\/\\///"
 
-### Windows
+## Windows
 
 - \<Leader\>vsp OR :vsp
   - Vertically split window
@@ -93,7 +116,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<Leader\>\<Left\> OR \<Ctrl W\>\<Ctrl H\>
   - Move to left buffer in current window
 
-### LSP
+## (Nvim) LSP
 
 - \<Leader\>e
   - Open Diagnostic window
@@ -130,7 +153,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<Leader\>fmt
   - Format using LSP
 
-### NvimTree
+## (Nvim) NvimTree
 
 - \<Leader\>nF
   - NvimTree Focus
@@ -141,7 +164,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<C-x\>
   - Open the file in a horizontal split
 
-### Prettier
+## (Nvim) Prettier
 
 - \<Leader\>gp OR :Prettier
   - Format using Prettier
@@ -150,12 +173,12 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<Leader\>wf OR :Prettier w
   - Format using Prettier and save
 
-### RipGrep
+## RipGrep
 
 - \<Leader\>rg
   - Find search by string
 
-### Autocomplete
+## (Nvim) Autocomplete
 
 - \<C-d\>
   - Scroll down
@@ -166,7 +189,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<C-y\>
   - Confirm
 
-### Nvim-Comment
+## (Nvim) Nvim-Comment
 
 - \<Leader\>c OR :CommentToggle
   - Comment / Uncomment current line
@@ -175,7 +198,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - :'<,'>CommentToggle
   - Comment / Uncomment in visual selection
 
-### Telescope
+## (Nvim) Telescope
 
 - \<Leader\>ff
   - find_files() ==> Lists files in your current working directory, respects .gitignore
