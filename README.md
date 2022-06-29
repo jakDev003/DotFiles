@@ -10,6 +10,16 @@ Linux:
 Windows:
 ~\AppData\Local\nvim
 
+#### Required external packages
+
+- install language servers:
+  - npm install -g vscode-languageserver
+  - npm install -g ng-server
+  - npm install -g typescript-language-server
+  - npm install -g typescript-eslint-language-service
+- install ripgrep:
+  - Follow latest instructions here: https://github.com/BurntSushi/ripgrep
+
 ## Shortcuts
 
 Note: \<Leader\> = "Space"

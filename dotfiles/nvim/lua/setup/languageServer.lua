@@ -2,6 +2,12 @@
 -- https://github.com/neovim/nvim-lspconfig/wiki/Installing-language-servers#automatically
 -- https://github.com/williamboman/nvim-lsp-installer
 
+-- install language servers:
+-- sudo npm install -g vscode-languageserver
+-- sudo npm install -g ng-server
+-- sudo npm install -g typescript-language-server
+-- sudo npm install -g typescript-eslint-language-service
+
 require("nvim-lsp-installer").setup {
     automatic_installation = true
   }

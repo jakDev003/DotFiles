@@ -188,7 +188,7 @@ local buttons = {
     dashboard.button("n", "📝 New file",     ":ene <BAR> startinsert <CR>"),
     dashboard.button("t", "🌳 NvimTree",     ":NvimTreeToggle<CR>"),
     dashboard.button("c", "✨ Change Theme", "<cmd>Telescope colorscheme<CR>"),
-    dashboard.button("e", "🔎 Find Files",   "<cmd>lua require'nvim-ripgrep'.grep()<CR>"),
+    dashboard.button("e", "🔎 Find Files",   "<cmd>lua require('telescope.builtin').find_files()<CR>"),
     dashboard.button("p", "✅ PackerSync",   ":PackerSync<CR>"),
     dashboard.button("s", "⚙️ Settings",     ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
     dashboard.button("q", "🛑 Quit NVIM",    ":qa<CR>"),
