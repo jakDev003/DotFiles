@@ -29,7 +29,8 @@ return require("packer").startup({
     use({ "wbthomason/packer.nvim" })
 
     -- Theme
-    use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+    --use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+    use({ "Shatur/neovim-ayu", config = get_setup("ayu-vim") })
 
     -- Icons
     use({ "kyazdani42/nvim-web-devicons" })
@@ -78,10 +79,10 @@ return require("packer").startup({
     })
 
     -- Snippet Engine (For autocomplete)
-    use {'SirVer/ultisnips',
+    use ({'SirVer/ultisnips',
     requires = {{'honza/vim-snippets', rtp = '.'}},
     config = get_setup('utilisnips')
-}
+    })
 
     -- Autocomplete (Requires LSP to be setup)
     use ({
@@ -90,6 +91,18 @@ return require("packer").startup({
       'hrsh7th/nvim-cmp',
       'onsails/lspkind.nvim'
     })
+
+    -- Telescope requirements
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {
+        'nvim-lua/plenary.nvim',
+        'nvim-lua/popup.nvim',
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope-fzy-native.nvim',
+      } },
+      config = get_setup('telescope')
+    }
 
     if packer_bootstrap then
       require("packer").sync()

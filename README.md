@@ -14,31 +14,6 @@ Windows:
 
 Note: \<Leader\> = "Space"
 
-### Windows
-
-- \<Leader\>vsp OR :vsp
-  - Vertically split window
-- \<Leader\>sp OR :sp
-  - Horizontally split window
-- \<Leader\>- OR :res +2
-  - Decrease height of current window by 2
-- \<Leader\>+ OR :res -2
-  - Increase height of current window by 2
-- \<Leader\>v+ OR :vert res +2
-  - Increase height of current window by 2
-- \<Leader\>v- OR :res -2
-  - Decrease height of current window by 2
-- \<Leader\>bq OR :bd
-  - Close current buffer without closing the window
-- \<Leader\>\<Down\> OR \<Ctrl W\>\<Ctrl J\>
-  - Move to bottom buffer in current window
-- \<Leader\>\<Up\> OR \<Ctrl W\>\<Ctrl K\>
-  - Move to top buffer in current window
-- \<Leader\>\<Right\> OR \<Ctrl W\>\<Ctrl L\>
-  - Move to right buffer in current window
-- \<Leader\>\<Left\> OR \<Ctrl W\>\<Ctrl H\>
-  - Move to left buffer in current window
-
 ### General
 
 - u
@@ -82,6 +57,31 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 
 - :\<line_from\>,\<line_to\>s/^/\<search_term\>/\<replace_term\>/
   - Change lines 1-4 from "" to "//" == ":1,4s/\\/\\///"
+
+### Windows
+
+- \<Leader\>vsp OR :vsp
+  - Vertically split window
+- \<Leader\>sp OR :sp
+  - Horizontally split window
+- \<Leader\>- OR :res +2
+  - Decrease height of current window by 2
+- \<Leader\>+ OR :res -2
+  - Increase height of current window by 2
+- \<Leader\>v+ OR :vert res +2
+  - Increase height of current window by 2
+- \<Leader\>v- OR :res -2
+  - Decrease height of current window by 2
+- \<Leader\>bq OR :bd
+  - Close current buffer without closing the window
+- \<Leader\>\<Down\> OR \<Ctrl W\>\<Ctrl J\>
+  - Move to bottom buffer in current window
+- \<Leader\>\<Up\> OR \<Ctrl W\>\<Ctrl K\>
+  - Move to top buffer in current window
+- \<Leader\>\<Right\> OR \<Ctrl W\>\<Ctrl L\>
+  - Move to right buffer in current window
+- \<Leader\>\<Left\> OR \<Ctrl W\>\<Ctrl H\>
+  - Move to left buffer in current window
 
 ### LSP
 
@@ -165,7 +165,33 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - :'<,'>CommentToggle
   - Comment / Uncomment in visual selection
 
-### Git
+### Telescope
 
-- git pull --tags origin develop
-  - Pull from 'develop' branch to get merge conflicts
+- \<Leader\>ff
+  - find_files() ==> Lists files in your current working directory, respects .gitignore
+- \<Leader\>fg
+  - live_grep() ==> Search for a string in your current working directory and get results live as you type (respecting .gitignore)
+- \<Leader\>fb
+  - buffers() ==> Lists open buffers in current neovim instance
+- \<Leader\>ps
+  - grep_string() ==> Searches for the string under your cursor in your current working directory
+- \<Leader\>fh
+  - help_tags() ==> Lists available help tags and opens a new window with the relevant help info on \<cr\>
+- \<Leader\>fgf
+  - git_files() ==> Fuzzy search through the output of git ls-files command, respects .gitignore, optionally ignores untracked files
+- \<C-c\>
+  - Close Telescope
+- \<Esc\>
+  - Close Telescope (in normal mode)
+- \<C-n\>/\<Down\>
+  - Next Item
+- \<C-p\>/\<Up\>
+  - Previous Item
+- j/k
+  - Next/Previous (in normal mode)
+- \<C-x\>
+  - Go to file selection as a split
+- \<C-v\>
+  - Go to file selection as a vsplit
+- \<C-t\>
+  - Go to file selection as a tab
