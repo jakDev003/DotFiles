@@ -43,6 +43,10 @@ Windows:
 - install ripgrep:
   - Follow latest instructions here: https://github.com/BurntSushi/ripgrep
 
+### Sometimes these might be useful
+- :so $VIMRUNTIME/syntax/hitest.vim
+  - This will show the color scheme colors (to edit the custom status line for example)
+
 # Shortcuts
 
 Note: \<Leader\> = "Space"
