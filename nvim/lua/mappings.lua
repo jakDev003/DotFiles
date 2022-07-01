@@ -49,6 +49,12 @@ local mappings = {
 
     -- RipGrep
     { "<Leader>rg", ":lua require'nvim-ripgrep'.grep()<CR>" },
+
+    -- Tabs
+    { "<Leader>tn", ":tabnew" }, -- Open a new tab
+    { "<Leader>tc", ":tabc" }, -- Close current tab
+    { "<Leader>tn", ":tabn" }, -- Cycle to next tab
+    { "<Leader>tp", ":tabp" }, -- Cycle to previous tab
   },
   x = {
     -- Visual mode

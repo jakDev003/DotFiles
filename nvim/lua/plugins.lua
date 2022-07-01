@@ -29,7 +29,7 @@ return require("packer").startup({
     use({ "wbthomason/packer.nvim" })
 
     -- Theme
-    --use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+    use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
     use({ "Shatur/neovim-ayu", config = get_setup("ayu-vim") })
 
     -- Icons
@@ -102,6 +102,17 @@ return require("packer").startup({
         'nvim-telescope/telescope-fzy-native.nvim',
       } },
       config = get_setup('telescope')
+    }
+
+    -- Comment.nvim
+    use {
+      'numToStr/Comment.nvim',
+      config = get_setup('comment-nvim')
+    }
+
+    use {
+      's1n7ax/nvim-terminal',
+      config = get_setup('nvim-terminal'),
     }
 
     if packer_bootstrap then

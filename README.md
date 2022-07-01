@@ -44,6 +44,7 @@ Windows:
   - Follow latest instructions here: https://github.com/BurntSushi/ripgrep
 
 ### Sometimes these might be useful
+
 - :so $VIMRUNTIME/syntax/hitest.vim
   - This will show the color scheme colors (to edit the custom status line for example)
 
@@ -95,6 +96,17 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - :\<line_from\>,\<line_to\>s/^/\<search_term\>/\<replace_term\>/
   - Change lines 1-4 from "" to "//" == ":1,4s/\\/\\///"
 
+## Tabs
+
+- \<Leader\>tn OR :tabnew
+  - Open a new tab
+- \<Leader\>tc OR :tabc
+  - Close current tab
+- \<Leader\>tn OR :tabn
+  - Cycle to next tab
+- \<Leader\>tp OR :tabp
+  - Cycle to previous tab
+
 ## Windows
 
 - \<Leader\>vsp OR :vsp
@@ -123,7 +135,7 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 ## (Nvim) LSP
 
 - \<Leader\>e
-  - Open Diagnostic window
+  - Open Diagnostic window (This will show the error message in a popup instead of in a line that goes off the screen)
 - [d
   - Diagnostic Window Go to Prev
 - ]d
@@ -167,6 +179,20 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
   - NvimTree Find
 - \<C-x\>
   - Open the file in a horizontal split
+- \<C-v\>
+  - Open the file in a vertical split
+- \<C-t\>
+  - Open the file in a tab
+- H
+  - Toggle Dot Files
+- R
+  - Refresh
+- d
+  - Remove (Delete with confirmation)
+- r
+  - Rename
+- a
+  - New file; leaving a trailing `/` will add a directory
 
 ## (Nvim) Prettier
 
@@ -193,14 +219,20 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 - \<C-y\>
   - Confirm
 
-## (Nvim) Nvim-Comment
+## (Nvim) Comment-Nvim
 
-- \<Leader\>c OR :CommentToggle
-  - Comment / Uncomment current line
-- :67,69CommentToggle
-  - Comment / Uncomment a range
-- :'<,'>CommentToggle
-  - Comment / Uncomment in visual selection
+- gcc
+  - Toggles the current line using linewise comment
+- gbc
+  - Toggles the current line using blockwise comment
+- \[count\]gcc`
+  - Toggles the number of line given as a prefix-count using linewise
+- \[count\]gbc
+  - Toggles the number of line given as a prefix-count using blockwise
+- gc\[count\]{motion}
+  - (Op-pending) Toggles the region using linewise comment
+- gb\[count\]{motion}
+  - (Op-pending) Toggles the region using blockwise comment
 
 ## (Nvim) Telescope
 
