@@ -77,6 +77,23 @@ Note: \<Leader\> = "Space"
 - 54G
   - Go to line '54' in file
 
+### Code Folding
+
+- zo
+  - Opens a fold where the cursor is
+- zO
+  - Opens all folds where the cursor is
+- zc
+  - Closes fold where the cursor is
+- zM
+  - Closes all open folds
+- zm
+  - Increases the fold level by one
+- zr
+  - Decreases the fold level by one
+- zR
+  - Decreases the fold level to zero (opens all folds)
+
 ### Search for text in file
 
 The basic steps to perform a search in Vim are as follows:
@@ -264,3 +281,18 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
   - Go to file selection as a vsplit
 - \<C-t\>
   - Go to file selection as a tab
+
+## Nvim-Terminal
+
+- \<Leader\>;
+  - Toggle open/close terminal
+- \<Leader\>(terminal number without the parenthesis)
+  - Open terminal (what ever terminal number you entered, should be a number 1 - 5)
+- \<Leader\> +
+  - Increase window height
+- \<Leader\> -
+  - Decrease window height
+- \<Leader\>\<Leader\> +
+  - Increase window width
+- \<Leader\>\<Leader\> -
+  - Decrease window width
