@@ -7,6 +7,9 @@
 -- sudo npm install -g ng-server
 -- sudo npm install -g typescript-language-server
 -- sudo npm install -g typescript-eslint-language-service
+-- pip install "python-lsp-server[all]" -- for more info https://www.github.com/python-lsp/python-lsp-server 
+-- sudo npm i -g vscode-langservers-extracted
+-- dotnet tool install --global csharp-ls
 
 require("nvim-lsp-installer").setup {
     automatic_installation = true
@@ -21,9 +24,6 @@ require("nvim-lsp-installer").setup {
   lspconfig.html.setup {}
   lspconfig.tsserver.setup {}
   lspconfig.csharp_ls.setup {}
-  lspconfig.omnisharp.setup {
-    use_mono = true
-  }
   lspconfig.cssls.setup {}
   lspconfig.cssmodules_ls.setup {}
   lspconfig.gopls.setup {
@@ -44,7 +44,7 @@ require("nvim-lsp-installer").setup {
   }
   lspconfig.cssmodules_ls.setup {}
   lspconfig.marksman.setup {}
-  lspconfig.sourcery.setup {}
+  lspconfig.pylsp.setup {}
 
 
 -- Mappings.
