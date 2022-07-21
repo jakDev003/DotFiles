@@ -126,9 +126,9 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 
 ## Windows
 
-- \<Leader\>vsp OR :vsp
+- \<Leader\>vs OR :vsp
   - Vertically split window
-- \<Leader\>sp OR :sp
+- \<Leader\>hs OR :sp
   - Horizontally split window
 - \<Leader\>- OR :res +2
   - Decrease height of current window by 2
@@ -151,40 +151,25 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
 
 ## (Nvim) LSP
 
-- \<Leader\>e
-  - Open Diagnostic window (This will show the error message in a popup instead of in a line that goes off the screen)
-- [d
-  - Diagnostic Window Go to Prev
-- ]d
-  - Diagnostic Window Go to Prev
-- \<Leader\>q
-  - Diagnostic Window Set Loc List
+- K
+  - Hover
 - gD
   - Go to Declaration
 - gd
   - Go to Definition
-- K
-  - Hover
-- gi
-  - Go to Implementation
-- \<C-k\>
-  - Signature Help
-- \<Leader\>wa
-  - Add workspace folder
-- \<Leader\>wr
-  - Remove workspace folder
-- \<Leader\>wl
-  - List Workspaces
-- \<Leader\>D
+- gt
   - Go to Type Definition
-- \<Leader\>rn
-  - Rename
-- \<Leader\>ca
-  - Code Action
-- gr
-  - Go to References
-- \<Leader\>fmt
-  - Format using LSP
+- \<Leader\>df
+  - Diagnostic Go To Next
+- \<Leader\>dp
+  - Diagnostic Go To Previous
+- \<Leader\>dl
+  - Telescope Diagnostics List (Shows list of errors)
+- \<Leader\>r
+  - LSP will rename all occurrences of the variable, not just search and replace
+    this will intelligently rename only variables in the scope you are in.
+- \<Leader\>c
+  - LSP will present you with options you can take such as remove unused imports.
 
 ## (Nvim) NvimTree
 
@@ -296,3 +281,10 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
   - Increase window width
 - \<Leader\>\<Leader\> -
   - Decrease window width
+
+## Tabline
+
+- \<Leader\>tn or :TablineBufferNext
+  - Move to next buffer in tabline
+- \<Leader\>tp or :TablineBufferPrevious
+  - Move to previous buffer in tabline

@@ -88,6 +88,7 @@ return require("packer").startup({
     use ({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
       'hrsh7th/nvim-cmp',
       'onsails/lspkind.nvim'
     })
@@ -110,9 +111,17 @@ return require("packer").startup({
       config = get_setup('comment-nvim')
     }
 
+    -- Nvim Terminal
     use {
       's1n7ax/nvim-terminal',
       config = get_setup('nvim-terminal'),
+    }
+
+    -- Tabline 
+    use {
+      'kdheepak/tabline.nvim',
+      config = get_setup('tabline'),
+      requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
     }
 
     if packer_bootstrap then

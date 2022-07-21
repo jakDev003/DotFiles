@@ -23,12 +23,10 @@ local mappings = {
     -- Prettier
     { "<Leader>gp", ":Prettier<CR>" }, -- Get Pretty
     { "<Leader>wf", ":Prettier :w<CR>" }, -- Get Pretty and save
-    -- these are handled in the prettier.lua
-    -- "<Leader>f" == Format using Prettier
 
     -- Window mappings
-    { "<Leader>vsp", ":vsp<CR>" }, -- vertical split
-    { "<Leader>sp", ":sp<CR>" }, -- vertical split
+    { "<Leader>vs", ":vsp<CR>" }, -- vertical split
+    { "<Leader>hs", ":sp<CR>" }, -- horizontal split
 
     { "<Leader>+", ":res +2<CR>" }, -- increase window size by 2
     { "<Leader>-", ":res -2<CR>" }, -- decrease window size by 2

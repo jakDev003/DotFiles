@@ -91,6 +91,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   ["indent-blankline.nvim"] = {
     config = { 'require("setup/indent-blankline")' },
     loaded = true,
@@ -101,6 +106,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
     url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["neovim-ayu"] = {
     config = { 'require("setup/ayu-vim")' },
@@ -192,6 +203,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
   },
+  ["tabline.nvim"] = {
+    config = { 'require("setup/tabline")' },
+    loaded = true,
+    path = "C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tabline.nvim",
+    url = "https://github.com/kdheepak/tabline.nvim"
+  },
   ["telescope.nvim"] = {
     config = { 'require("setup/telescope")' },
     loaded = true,
@@ -216,38 +233,18 @@ time([[Defining packer_plugins]], false)
 time([[Runtimepath customization]], true)
 vim.o.runtimepath = vim.o.runtimepath .. ",C:\\Users\\jkagiwada\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-snippets\\."
 time([[Runtimepath customization]], false)
--- Config for: ultisnips
-time([[Config for ultisnips]], true)
-require("setup/utilisnips")
-time([[Config for ultisnips]], false)
--- Config for: nvim-terminal
-time([[Config for nvim-terminal]], true)
-require("setup/nvim-terminal")
-time([[Config for nvim-terminal]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-require("setup/alpha-nvim")
-time([[Config for alpha-nvim]], false)
--- Config for: neovim-ayu
-time([[Config for neovim-ayu]], true)
-require("setup/ayu-vim")
-time([[Config for neovim-ayu]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("setup/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-ripgrep
-time([[Config for nvim-ripgrep]], true)
-require("setup/alpha-nvim")
-time([[Config for nvim-ripgrep]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require("setup/indent-blankline")
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: nightfox.nvim
 time([[Config for nightfox.nvim]], true)
 require("setup/nightfox")
 time([[Config for nightfox.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require("setup/indent-blankline")
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: neovim-ayu
+time([[Config for neovim-ayu]], true)
+require("setup/ayu-vim")
+time([[Config for neovim-ayu]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require("setup/telescope")
@@ -256,6 +253,30 @@ time([[Config for telescope.nvim]], false)
 time([[Config for Comment.nvim]], true)
 require("setup/comment-nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: tabline.nvim
+time([[Config for tabline.nvim]], true)
+require("setup/tabline")
+time([[Config for tabline.nvim]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+require("setup/utilisnips")
+time([[Config for ultisnips]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+require("setup/alpha-nvim")
+time([[Config for alpha-nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("setup/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-terminal
+time([[Config for nvim-terminal]], true)
+require("setup/nvim-terminal")
+time([[Config for nvim-terminal]], false)
+-- Config for: nvim-ripgrep
+time([[Config for nvim-ripgrep]], true)
+require("setup/alpha-nvim")
+time([[Config for nvim-ripgrep]], false)
 if should_profile then save_profiles(1) end
 
 end)
