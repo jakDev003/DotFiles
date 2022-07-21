@@ -42,7 +42,6 @@ require("nvim-lsp-installer").setup {
     },
     on_attach = on_attach,
   }
-  lspconfig.cssmodules_ls.setup {}
   lspconfig.marksman.setup {}
   lspconfig.pylsp.setup {}
 
