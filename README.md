@@ -170,6 +170,8 @@ Press "n" to find the next occurrence or "N" to find the previous occurrence.
     this will intelligently rename only variables in the scope you are in.
 - \<Leader\>c
   - LSP will present you with options you can take such as remove unused imports.
+- \<Leader\>o
+  - Organize Imports (Typescript only)
 
 ## (Nvim) NvimTree
 

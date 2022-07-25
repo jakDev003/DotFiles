@@ -63,16 +63,12 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>dl', "<cmd>Telescope diagnostics<cr>", bufopts)
   vim.keymap.set('n', '<Leader>r', vim.lsp.buf.rename, bufopts)  
   vim.keymap.set('n', '<Leader>c', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<Leader>o', "<cmd>OrganizeImports<cr>", bufopts)
 end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
-}
-
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
 }
 
 -- Gopls additional code
@@ -105,3 +101,27 @@ function goimports(timeoutms)
     vim.lsp.buf.execute_command(action)
   end
 end
+
+
+-- TSServer additional code
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  },
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
